@@ -180,7 +180,7 @@ func _apply_enemy_damage(body) -> void:
 
 # Reset the player's position to the current level spawn point if collided with any trap
 func _on_collision_body_entered(body):
-	if body.is_in_group("Traps"):
+	if body.is_in_group("Traps") and movement_enabled:   # กันตายซ้ำหลายครั้งตอนกำลังเกิดใหม่
 		hit_trap.emit()
 	if body.is_in_group("Enemy") and can_damage:
 		_apply_enemy_damage(body)

@@ -4,6 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://1ay25i0wdihg" path="res://Assets/Icons/cpkku_dark.png" id="2_fnvqj"]
 [ext_resource type="PackedScene" uid="uid://puc4l62gx6et" path="res://Scenes/Prefabs/button_exit.tscn" id="3_fnvqj"]
 
+[ext_resource type="Texture2D" path="res://Assets/Night/sky.png" id="c_sky"]
+[ext_resource type="Texture2D" path="res://Assets/Night/face_circle.png" id="c_face"]
+[ext_resource type="Texture2D" path="res://Assets/Night/hero_big.png" id="c_hero"]
+
 [node name="Node2D" type="Node2D" unique_id=264957255]
 
 [node name="Control" type="Control" parent="." unique_id=423201679]
@@ -11,6 +15,23 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1154.0
 offset_bottom = 650.0
+
+[node name="Sky" type="Sprite2D" parent="Control" index="0"]
+z_index = -10
+position = Vector2(-24, -20)
+scale = Vector2(1.1, 1.1)
+centered = false
+texture = ExtResource("c_sky")
+
+[node name="Face" type="Sprite2D" parent="Control"]
+position = Vector2(200, 380)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("c_face")
+
+[node name="Hero" type="Sprite2D" parent="Control"]
+position = Vector2(960, 420)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("c_hero")
 
 [node name="CpkkuDark" type="Sprite2D" parent="Control" unique_id=813724852]
 position = Vector2(584, 71)
@@ -88,8 +109,5 @@ grow_horizontal = 2
 theme = ExtResource("1_2g1tp")
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 16
-text = "1. 
-2.
-3.
-4."
+text = "1.  นายศาสตรพล อนันเอื้อ   รหัส 673380641-6\n     ผู้พัฒนาเกม Devil Hunter Adventure\n     (ตัวละคร ศัตรู ด่าน เสียง และฉาก)"
 vertical_alignment = 1

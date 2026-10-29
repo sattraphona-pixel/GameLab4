@@ -71,7 +71,7 @@ animations = [{
 [node name="Enemy" unique_id=600502477 instance=ExtResource("1_a4af2")]
 script = ExtResource("2_tyn28")
 state = 1
-label = "MushRoomer"
+label = "Imp"
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=587424215]
 position = Vector2(0, -27)

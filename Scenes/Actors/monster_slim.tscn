@@ -76,7 +76,7 @@ hp_max = 100
 atk = 5
 state = 1
 type = 3
-label = "Slimmy"
+label = "Ghosty"
 rest_recovery_ratio = 1.0
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=587424215]

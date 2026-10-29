@@ -3,6 +3,10 @@
 [ext_resource type="Theme" uid="uid://d3eng5cvycmjf" path="res://Scenes/Prefabs/theme.tres" id="1_5l1gm"]
 [ext_resource type="PackedScene" uid="uid://puc4l62gx6et" path="res://Scenes/Prefabs/button_exit.tscn" id="2_81byk"]
 
+[ext_resource type="Texture2D" path="res://Assets/Night/sky.png" id="e_sky"]
+[ext_resource type="AudioStream" path="res://Assets/Sound/win.ogg" id="e_snd"]
+[ext_resource type="Texture2D" path="res://Assets/Night/hero_big.png" id="e_hero"]
+
 [node name="GameOver" type="Node2D" unique_id=826370530]
 
 [node name="Title" type="Label" parent="." unique_id=1965507633]
@@ -15,9 +19,39 @@ theme_override_colors/font_color = Color(0.36862746, 0.9137255, 0.1882353, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 33
-text = "You Win"
+text = "You Win!"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Sky" type="Sprite2D" parent="." index="0"]
+z_index = -10
+position = Vector2(-24, -20)
+scale = Vector2(1.1, 1.1)
+centered = false
+texture = ExtResource("e_sky")
+
+[node name="Hero" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(180, 360)
+scale = Vector2(0.4, 0.4)
+rotation = 0.0
+texture = ExtResource("e_hero")
+
+[node name="Sub" type="Label" parent="."]
+offset_left = 330.0
+offset_top = 290.0
+offset_right = 830.0
+offset_bottom = 330.0
+theme = ExtResource("1_5l1gm")
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 20
+text = "นักล่าปีศาจชนะแล้ว! ขอบคุณที่เล่น"
+horizontal_alignment = 1
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("e_snd")
+autoplay = true
+bus = &"sfx"
 
 [node name="btnExit" parent="." unique_id=1633606001 instance=ExtResource("2_81byk")]
 offset_left = 438.0

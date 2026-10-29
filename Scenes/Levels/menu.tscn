@@ -3,9 +3,67 @@
 [ext_resource type="Script" uid="uid://tkynu7pd01lh" path="res://Scenes/Levels/menu.gd" id="1_hq2ph"]
 [ext_resource type="Texture2D" uid="uid://1ay25i0wdihg" path="res://Assets/Icons/cpkku_dark.png" id="2_7pnm7"]
 [ext_resource type="Texture2D" uid="uid://cdgognnt83s33" path="res://icon.svg" id="3_7pnm7"]
+[ext_resource type="Texture2D" path="res://Assets/Night/sky.png" id="n_sky"]
+[ext_resource type="Texture2D" path="res://Assets/Night/far_mountains.png" id="n_far"]
+[ext_resource type="Texture2D" path="res://Assets/Night/near_hills.png" id="n_near"]
+[ext_resource type="Texture2D" path="res://Assets/Night/hero_big.png" id="n_hero"]
+[ext_resource type="Texture2D" path="res://Assets/Night/face_circle.png" id="n_face"]
+[ext_resource type="Theme" uid="uid://d3eng5cvycmjf" path="res://Scenes/Prefabs/theme.tres" id="n_theme"]
+[ext_resource type="Texture2D" path="res://Assets/Spritesheet/Mushroom-Run.png" id="n_imp"]
 
 [node name="Node2D" type="Node2D" unique_id=827773846]
 script = ExtResource("1_hq2ph")
+
+[node name="Sky" type="Sprite2D" parent="." index="0"]
+z_index = -10
+position = Vector2(-24, -20)
+scale = Vector2(1.1, 1.1)
+centered = false
+texture = ExtResource("n_sky")
+
+[node name="Far" type="Sprite2D" parent="." index="1"]
+z_index = -9
+position = Vector2(-24, 250)
+scale = Vector2(1.1, 1.1)
+centered = false
+texture = ExtResource("n_far")
+
+[node name="Near" type="Sprite2D" parent="." index="2"]
+z_index = -8
+position = Vector2(-24, 340)
+scale = Vector2(1.1, 1.1)
+centered = false
+texture = ExtResource("n_near")
+
+[node name="Hero" type="Sprite2D" parent="." index="3"]
+z_index = -5
+position = Vector2(260, 360)
+scale = Vector2(0.42, 0.42)
+texture = ExtResource("n_hero")
+
+[node name="Title" type="Label" parent="." index="4"]
+offset_left = 150.0
+offset_top = 20.0
+offset_right = 1050.0
+offset_bottom = 90.0
+theme = ExtResource("n_theme")
+theme_override_colors/font_color = Color(1, 0.82, 0.25, 1)
+theme_override_colors/font_outline_color = Color(0.2, 0.05, 0.3, 1)
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 52
+text = "Devil Hunter Adventure"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="." index="5"]
+offset_left = 150.0
+offset_top = 92.0
+offset_right = 1050.0
+offset_bottom = 130.0
+theme = ExtResource("n_theme")
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 20
+text = "673380641-6   นายศาสตรพล อนันเอื้อ"
+horizontal_alignment = 1
 
 [node name="UI" type="Control" parent="." unique_id=2061607031]
 layout_mode = 3
@@ -63,6 +121,18 @@ offset_bottom = 435.0
 grow_horizontal = 2
 text = "Credit"
 
+[node name="btnExit" type="Button" parent="UI" unique_id=1938475621]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -76.5
+offset_top = 441.0
+offset_right = 78.5
+offset_bottom = 505.0
+grow_horizontal = 2
+text = "Exit"
+
 [node name="CpkkuDark" type="Sprite2D" parent="." unique_id=2047758235]
 position = Vector2(1006, 611)
 scale = Vector2(0.61328125, 0.6486486)
@@ -77,3 +147,4 @@ texture = ExtResource("3_7pnm7")
 [connection signal="pressed" from="UI/btnContinue" to="." method="_on_btn_continue_pressed"]
 [connection signal="pressed" from="UI/btnOption" to="." method="_on_btn_option_pressed"]
 [connection signal="pressed" from="UI/btnCredit" to="." method="_on_btn_credit_pressed"]
+[connection signal="pressed" from="UI/btnExit" to="." method="_on_btn_exit_pressed"]
